@@ -15,11 +15,11 @@ package main
 import "github.com/barbarbar338/snowflake"
 
 func main() {
-    snowflake := Snowflake {
+    s := snowflake.Snowflake {
 		EPOCH: 1618606800, // your projects EPOCH
 	}
 
-    id := snowflake.Generate() // Some unique snowflake ID (eg: 6782465263234318336)
+    id := s.Generate() // Some unique snowflake ID (eg: 6782465263234318336)
 }
 ```
 
