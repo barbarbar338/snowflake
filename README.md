@@ -15,31 +15,29 @@ package main
 import "github.com/barbarbar338/snowflake"
 
 func main() {
-    s := snowflake.Snowflake {
-		EPOCH: 1618606800, // your projects EPOCH
-	}
+    // create a new factory with your projects EPOCH and machineID
+    s := snowflake.NewFactory(1420070400000, 0)
 
-    id := s.Generate() // Some unique snowflake ID (eg: 6782465263234318336)
+    id := s.Generate() // Some unique snowflake ID (eg: 17447384661725548544)
 }
 ```
 
 # 💻 How It Works?
 
 ```
-EPOCH: 1618606800
-Snowflake: 6782465263234318336
+EPOCH: 1420070400000
+Snowflake: 17447384661725548544
 
-Binary: 101111000100000001010000011100011001100100000100000000000000000
-Timestamp: 1617065730866
-WorkerID: 1
-ProcessID: 0
-Increment: 0
+Binary: 1011110001000000010100000111000110011001000001000000000000
+Timestamp: 4159708641244
+MachineID: 1
+Sequence: 0
 
-●------------------------------------------------------------------------●
+●-----------------------------------------------------------------●
 
-╔                                        Binary                          ╗
-║10111100010000000101000001110001100110010║ ║00001║ ║00000║ ║000000000000║
-╚               Timestamp                 ╝ ╚ WID ╝ ╚ PID ╝ ╚  Increment ╝
+╔                                Binary                          ╗
+║10111100010000000101000001110001100110010║ ║00001║ ║000000000000║
+╚               Timestamp                 ╝ ╚ MID ╝ ╚  Sequence  ╝
 ```
 
 # 🧦 Contributing
