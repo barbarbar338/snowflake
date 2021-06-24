@@ -20,9 +20,7 @@ type SnowflakeFactory struct {
 }
 
 func (s *SnowflakeFactory) Generate() Snowflake {
-	defer func() {
-		s.sequenceIncrease()
-	}()
+	defer s.sequenceIncrease()
 
 	s.mux.Lock()
 	now := time.Now().UnixNano() / 1000
